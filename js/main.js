@@ -44,7 +44,8 @@ const subtitleLocales = {
 	Chinese: 'zh-Hans',
 	TraditionalChinese: 'zh-Hant',
 	Japanese: 'ja',
-	Korean: 'ko'
+	Korean: 'ko',
+	Thai: 'th'
 };
 let isVoicelinePlaying = false;
 
@@ -62,21 +63,22 @@ const AUDIO_DETAIL = [
 				"古い豆ってどうしてこう美味しくないんだろ。"
 			],
 			English: [
-				"Ugh... so bitter...",
-				"Why are old beans always so unpalatable?"
+				"Ugh... It's bitter and dry...",
+				"It's seriously awful. Maybe the beans have gone bad."
 			],
 			Chinese: [
 				"唔……好苦……。",
 				"陈年豆子怎么就这么难喝啊。"
 			],
 			TraditionalChinese: [
-				"唔……好苦……。",
-				"陳年豆子怎麼就這麼難喝啊。"
+				"嗚……好苦……",
+				"陳年的豆子為什麼總是這麼不好喝呢。"
 			],
 			Korean: [
-				"윽…… 써…….",
-				"왜 오래된 콩은 항상 맛이 좋지 않은가?"
-			]
+				"윽…… 쓰고 텁텁해……",
+				"오래 방치한 원두라 그런지 맛이 별로네."
+			],
+			Thai: ["อึก... ทั้งขมทั้งฝาดคอ...","คงเพราะปล่อย เมล็ดกาแฟทิ้งไว้นาน รสชาติเลยไม่ได้เรื่องเลย"]
 		}
 	},
 	{
@@ -86,21 +88,22 @@ const AUDIO_DETAIL = [
 				"ロマンがなかったら、ここまで来られなかっただろうし。"
 			],
 			English: [
-				"Romance, huh... Yeah, I guess you're right.",
-				"If it weren't for that sense of romance, we probably wouldn't have made it this far."
+				"My dream... Yeah.",
+				"Without that dream, I would never have made it as far as I did."
 			],
 			Chinese: [
 				"浪漫…… 吗。是啊。",
 				"要是没有这份浪漫，我大概也走不到今天吧。"
 			],
 			TraditionalChinese: [
-				"浪漫…… 嗎。是啊。",
-				"要是沒有這份浪漫，我大概也走不到今天吧。"
+				"浪漫……是嗎。……說的也是。",
+				"要是沒有那份浪漫，我大概也走不到今天這一步吧。"
 			],
 			Korean: [
-				"로맨스... 네, 네, 네",
-				"만약 그 낭만적 인 감각이 없었다면, 우리는 아마도 이 정도까지 도달하지 못했을 것입니다."
-			]
+				"로망이라…… 그렇네.",
+				"그 로망이 없었더라면, 여기까지 오지 못했을테니까."
+			],
+			Thai: ["ความเพ้อฝันงั้นเหรอ... นั่นสินะ","ถ้าไม่ใช่เพราะความเพ้อฝันนั่นแล้วละก็ ฉันคงมาไม่ถึงจุดนี้หรอก"]
 		}
 	},
 	{
@@ -111,9 +114,9 @@ const AUDIO_DETAIL = [
 				"狭いし、あんまりできることもなくてさ。"
 			],
 			English: [
-				"When you were a kid, did you ever dream of having a secret base?",
-				"But when you actually try building one, it's nothing like you imagined...",
-				"It's cramped, and there's not much you can actually do there."
+				"Did you ever want to make a secret base when you were young?",
+				"The reality of it ended up being pretty different from my imagination when I did finally make one.",
+				"They're cramped, uncomfortable, and pretty boring."
 			],
 			Chinese: [
 				"老师小时候，有没有憧憬过秘密基地呀？",
@@ -121,15 +124,16 @@ const AUDIO_DETAIL = [
 				"又狭小，能做的事情也少得可怜。"
 			],
 			TraditionalChinese: [
-				"老師小時候，有沒有憧憬過秘密基地呀？",
-				"可真自己動手搭起來，才發現和想象裡完全不一樣……",
-				"又狹小，能做的事情也少得可憐。"
+				"小時候，你有沒有對秘密基地有過憧憬？",
+				"可是，實際做出來之後卻跟想像中完全不一樣……",
+				"不只空間狹窄，能做的事也不多。"
 			],
 			Korean: [
-				"어렸을 때 비밀 기지를 꿈꾸던 적이 있나요?",
-				"하지만 당신이 실제로 그것을 만들려고 할 때, 그것은 당신이 상상했던 것과는 전혀 다르지 않습니다.",
-				"좁은 곳이고, 실제로 할 수 있는 일은 별로 없습니다."
-			]
+				"어릴 때, 비밀 기지가 갖고 싶었던 적은 없었어?",
+				"하지만 막상 실제로 만들어 보니 생각과 많이 다르더라고.",
+				"좁고, 불편하고, 할 수 있는 것도 그다지 없고……"
+			],
+			Thai: ["ตอนเด็กๆ ไม่เคยอยากมี ฐานลับบ้างเหรอ?","แต่พอได้มีเข้าจริงๆ มันก็ ต่างจากที่คิดไว้เยอะเลยละ","ทั้งแคบ ไม่สะดวก แล้วก็ทำอะไรไม่ได้มาก..."]
 		}
 	},
 	{
@@ -139,21 +143,22 @@ const AUDIO_DETAIL = [
 				"理想の大人も、SRTの生活も。"
 			],
 			English: [
-				"It's like... being forced to face the gap between dreams and reality.",
-				"Whether it's about the ideal adult, or life in the SRT."
+				"I guess that's how it always is with dreams. Reality never lives up to them.",
+				"Things like an ideal adult, life in SRT..."
 			],
 			Chinese: [
 				"那一刻，就好像被狠狠戳醒了梦想与现实的差距。",
 				"不论是理想中的大人模样，还是 SRT 的日常。"
 			],
 			TraditionalChinese: [
-				"那一刻，就好像被狠狠戳醒了夢想與現實的差距。",
-				"不論是理想中的大人模樣，還是 SRT 的日常。"
+				"總覺得……像是被迫面對了夢想與現實呢。",
+				"無論是理想的大人，還是SRT的生活。"
 			],
 			Korean: [
-				"마치 꿈과 현실 사이의 격차를 마주하게 되는 것처럼",
-				"이상적인 성인이든 SRT에서 사는 삶이든"
-			]
+				"꿈꿔왔던 현실은 언제나 그런 모습이었던 것 같아.",
+				"이상적인 어른의 모습도, SRT의 생활도."
+			],
+			Thai: ["ชีวิตจริงที่ฉันเคยเฝ้าฝัน คงเป็นแบบนั้นมาตลอดสินะ","ทั้งภาพลักษณ์ของผู้ใหญ่ ในอุดมคติ และชีวิตใน SRT"]
 		}
 	},
 	{
@@ -162,17 +167,18 @@ const AUDIO_DETAIL = [
 				"でも、だからこそっていうのかな。現実がどんな形でも、味があるって思うようになったっていうか。"
 			],
 			English: [
-				"But maybe that's why... I've started to feel that no matter what shape reality takes, it has its own flavor."
+				"But at the same time, because of that dream... The disappointments of reality have become an acquired taste for me."
 			],
 			Chinese: [
                 "不过也正因如此吧。我渐渐明白，无论现实是什么样子，都自有它的滋味。"
 			],
 			TraditionalChinese: [
-				"不過也正因如此吧。我漸漸明白，無論現實是什麼樣子，都自有它的滋味。"
+				"不過……或許正因為如此吧。無論現實是什麼模樣，我都開始覺得別有一番風味。"
 			],
 			Korean: [
-				"하지만 어쩌면 그 때문에 현실이 어떤 형태를 취하든,"
-			]
+				"하지만 그 로망 덕분이었을까. 현실의 불편함도 이제는 기묘한 풍미로 느껴져."
+			],
+			Thai: ["แต่ก็คงเป็นเพราะ ความเพ้อฝันนั่นละมั้ง ความไม่สะดวกสบายใน ชีวิตจริงตอนนี้เลยกลายเป็น รสชาติที่แปลกของฉันไปแล้ว"]
 		}
 	},
 	{
@@ -182,21 +188,22 @@ const AUDIO_DETAIL = [
 				"ふふっ……改めまして、私の世界へようこそ。"
 			],
 			English: [
-				"What do you think, Sensei, of this old coffee filled with 'romance'?",
-				"Hehe... Once again, welcome to my world."
+				"Sensei. What does cheap coffee steeped in my dreams taste like?",
+				"Fufu. Once again, welcome to my world."
 			],
 			Chinese: [
 				"老师觉得，满是浪漫沉淀的陈年咖啡，怎么样？",
 				"呼呼…… 那我重新说一次，欢迎来到我的世界。"
 			],
 			TraditionalChinese: [
-				"老師覺得，滿是浪漫沉澱的陳年咖啡，怎麼樣？",
-				"呼呼…… 那我重新說一次，歡迎來到我的世界。"
+				"老師你……對乘載著浪漫的陳年咖啡，是怎麼想的呢？",
+				"呵呵……重新向你介紹一次，歡迎來到我的世界。"
 			],
 			Korean: [
-				"선생님, 이 오래된 커피에 대해 어떻게 생각하십니까?",
-				"다시 한번, 내 세상에 오신 것을 환영합니다."
-			]
+				"선생님. 로망을 잔뜩 탄 싸구려 커피의 맛은 어때?",
+				"후훗. 다시 한번, 나의 세계에 온 걸 환영해."
+			],
+			Thai: ["คุณครู กาแฟราคาถูกๆ ที่ชงมาด้วยความเพ้อฝัน รสชาติเป็นยังไงบ้าง?","ฮุฮุ ยินดีต้อนรับสู่โลกของฉันอีกครั้งนะ"]
 		}
 	}
 ];
@@ -308,7 +315,7 @@ function playVoiceline() {
 			track.play().catch(finish);
 
 			if (dialogBox) {
-				textbox.textContent = dialog[window.selectedLanguage][index];
+				textbox.textContent = getSubtitleText(dialog, window.selectedLanguage, index);
 				textbox.style.opacity = 1;
 			}
 		},
@@ -483,6 +490,16 @@ function setMouse(event) {
 	return { x: ax - canvas.width * positionX, y: ay - canvas.height * positionY };
 }
 
+function getSubtitleText(dialog, language, index) {
+	let text = dialog?.[language]?.[index];
+	if (text == null && language === 'Thai') {
+		language = 'English';
+		text = dialog?.[language]?.[index];
+	}
+	textbox.lang = subtitleLocales[language];
+	return text ?? "";
+}
+
 function updateSubtitleLanguage() {
 	let language = subtitleLanguagePreference;
 	if (language === 'auto') {
@@ -496,6 +513,8 @@ function updateSubtitleLanguage() {
 			language = 'Japanese';
 		} else if (primary === 'ko' || primary === 'korean' || primary === 'koreana') {
 			language = 'Korean';
+		} else if (primary === 'th' || primary === 'thai') {
+			language = 'Thai';
 		} else {
 			language = 'English';
 		}
@@ -505,7 +524,7 @@ function updateSubtitleLanguage() {
 	window.selectedLanguage = language;
 	textbox.lang = subtitleLocales[language];
 	const clip = currentTracks.at(-1);
-	if (dialogBox && clip) textbox.textContent = clip.dialog[language][clip.index];
+	if (dialogBox && clip) textbox.textContent = getSubtitleText(clip.dialog, language, clip.index);
 }
 
 function init() {
